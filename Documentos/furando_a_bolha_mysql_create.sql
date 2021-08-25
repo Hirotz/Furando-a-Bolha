@@ -15,7 +15,9 @@ CREATE TABLE `tb_postagem` (
 CREATE TABLE `tb_tema` (
 	`id` bigint NOT NULL AUTO_INCREMENT,
 	`descricao` varchar(1000) NOT NULL,
-	PRIMARY KEY (`id`)
+	`tema` varchar(255) NOT NULL,
+	`palavra_chave` varchar(255) NOT NULL,
+    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `tb_usuario` (
@@ -23,7 +25,8 @@ CREATE TABLE `tb_usuario` (
 	`nome` varchar(255) NOT NULL,
 	`usuario` varchar(255) NOT NULL,
 	`senha` varchar(500) NOT NULL,
-	PRIMARY KEY (`id`)
+	`tipo_usuario` varchar(255) NOT NULL,
+    PRIMARY KEY (`id`)
 );
 
 ALTER TABLE `tb_postagem` ADD CONSTRAINT `tb_postagem_fk0` FOREIGN KEY (`tema_id`) REFERENCES `tb_tema`(`id`);
